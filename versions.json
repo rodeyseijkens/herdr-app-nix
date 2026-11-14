@@ -1,0 +1,16 @@
+{
+  "app": {
+    "version": "0.1.15",
+    "hashes": {
+      "x86_64-linux": "sha256-+Z4eBL6CwOELL2nudAPKNDhvSA2SUR31hlr0cD52Vd0=",
+      "aarch64-linux": "sha256-Dl/ZWgVkUuwx4y/mqlpHqLHUICCujzoQzaLgoQAdQSQ="
+    }
+  },
+  "core": {
+    "version": "0.1.21",
+    "hashes": {
+      "x86_64-linux": "sha256-eEJHVcEKQN3jigvbVcIKwZcG6a4F7Wj8Ks8fz/DZQcE=",
+      "aarch64-linux": "sha256-6ESiv6tIoiYJdnnQdryDBC/lf8zvU4fvgC5bJOeLUpo="
+    }
+  }
+}

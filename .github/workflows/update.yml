@@ -1,0 +1,63 @@
+name: Auto Update
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Update packages
+        run: ./update.sh
+
+      - name: Test build
+        run: |
+          if git diff --quiet versions.json; then
+            echo "No version changes to build"
+            exit 0
+          fi
+          nix build .#herdr-app .#herdr-core --accept-flake-config
+
+      - name: Commit and push
+        run: |
+          if git diff --quiet versions.json; then
+            echo "Already up to date"
+            exit 0
+          fi
+
+          APP=$(jq -r '.app.version' versions.json)
+          CORE=$(jq -r '.core.version' versions.json)
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add versions.json
+          git commit -m "Update herdr-app to $APP and herdr-core to $CORE"
+          git push
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          APP=$(jq -r '.app.version' versions.json)
+          CORE=$(jq -r '.core.version' versions.json)
+
+          if gh release view "v$APP" >/dev/null 2>&1; then
+            echo "Release v$APP already exists"
+            exit 0
+          fi
+
+          gh release create "v$APP" \
+            --title "herdr-app $APP" \
+            --notes "Updated herdr-app to $APP (herdr-core: $CORE)."
