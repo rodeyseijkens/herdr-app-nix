@@ -1,16 +1,16 @@
 {
   "app": {
-    "version": "0.1.16",
+    "version": "0.1.17",
     "hashes": {
-      "x86_64-linux": "sha256-KC0mMhlrI4IGz+Zr+2HA+vKZyhyRhDvQdlIbvjZXEhY=",
-      "aarch64-linux": "sha256-7+708XWbDokA8gXCwisUKHoRL4dEBlObTqGzviS3NjE="
+      "x86_64-linux": "sha256-IYj019XPBBRQ29vy4UZJJEsaYnShCAvdl/p7xFDmXKE=",
+      "aarch64-linux": "sha256-qMBr96P84GpzqaUOcJJQqsj0Qv7cxsSfMVe3bdjdbZM="
     }
   },
   "core": {
-    "version": "0.1.21",
+    "version": "0.1.22",
     "hashes": {
-      "x86_64-linux": "sha256-eEJHVcEKQN3jigvbVcIKwZcG6a4F7Wj8Ks8fz/DZQcE=",
-      "aarch64-linux": "sha256-6ESiv6tIoiYJdnnQdryDBC/lf8zvU4fvgC5bJOeLUpo="
+      "x86_64-linux": "sha256-MFTsOZLOgMVxXXIcqp3O+mBWch0V3BE/R1CvznY7pd8=",
+      "aarch64-linux": "sha256-mHV5hSRdRfjXPdheaLE5t/FnwoSIu4nt2YNMP1pc9M8="
     }
   }
 }
