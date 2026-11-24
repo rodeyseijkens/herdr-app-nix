@@ -1,9 +1,9 @@
 {
   "app": {
-    "version": "0.1.17",
+    "version": "0.1.18",
     "hashes": {
-      "x86_64-linux": "sha256-IYj019XPBBRQ29vy4UZJJEsaYnShCAvdl/p7xFDmXKE=",
-      "aarch64-linux": "sha256-qMBr96P84GpzqaUOcJJQqsj0Qv7cxsSfMVe3bdjdbZM="
+      "x86_64-linux": "sha256-ihHt153UCzSfcobPUZELYuIRNtr48DAFqf0sTcWDD4M=",
+      "aarch64-linux": "sha256-O/UVBcsefWHmPM3CZV6IGfS0Urq+rZki/ku2/mnpE1A="
     }
   },
   "core": {
